@@ -4,7 +4,7 @@
 
         <div class="section-title">
           <h2>Portfolio</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <!-- <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p> -->
         </div>
 
         <div class="row">
@@ -20,7 +20,53 @@
 
         <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+        
+        
+     
+        
+
+
+
+        <?php 
+// add portfolio section from DB    
+//........................................................
+    $sql2 = "SELECT * FROM `portfolio` ";
+    $result2 = $conn->query($sql2);
+    
+    if ($result2->num_rows > 0) {
+      // output data of each row
+      while($row = $result2->fetch_assoc()) {
+    
+    
+
+echo'
+
+<div class="col-lg-4 col-md-6 portfolio-item '.$row['class'].'">
+<div class="portfolio-wrap">
+  <img src="assets/img/portfolio/'.$row['photo'].'" class="img-fluid" alt="">
+  <div class="portfolio-info">
+    <h4>'.$row['title'].'</h4>
+    <p>'.$row['catagory'].'</p>
+    <div class="portfolio-links">
+      <a href="assets/img/portfolio/'.$row['photo'].'" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
+      <a href="portfolio-details.php" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
+    </div>
+  </div>
+</div>
+</div>
+
+';
+}}
+//........................................................
+ ?>
+
+
+
+
+
+
+        
+        <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-app">
             <div class="portfolio-wrap">
               <img src="assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
               <div class="portfolio-info">
@@ -34,6 +80,13 @@
             </div>
           </div>
 
+     
+     
+     
+     
+     
+     
+     
           <div class="col-lg-4 col-md-6 portfolio-item filter-web">
             <div class="portfolio-wrap">
               <img src="assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
@@ -146,7 +199,7 @@
             </div>
           </div>
 
-        </div>
+        </div> -->
 
       </div>
     </section><!-- End Portfolio Section -->

@@ -9,24 +9,58 @@
         <div class="row mt-1">
 
           <div class="col-lg-4">
-            <div class="info">
-              <div class="address">
-                <i class="bi bi-geo-alt"></i>
-                <h4>Location:</h4>
-                <p>A108 Adam Street, New York, NY 535022</p>
-              </div>
 
-              <div class="email">
-                <i class="bi bi-envelope"></i>
-                <h4>Email:</h4>
-                <p>info@example.com</p>
-              </div>
 
-              <div class="phone">
-                <i class="bi bi-phone"></i>
-                <h4>Call:</h4>
-                <p>+1 5589 55488 55s</p>
-              </div>
+
+
+
+          <div class="info">
+
+
+
+
+
+          <?php 
+// add info section from DB    
+//........................................................
+    $sql2 = "SELECT * FROM `info` ";
+    $result2 = $conn->query($sql2);
+    
+    if ($result2->num_rows > 0) {
+      // output data of each row
+      while($row = $result2->fetch_assoc()) {
+    
+    
+
+echo'
+
+<div class="'.$row['class'].'">
+<i class="'.$row['icon'].'"></i>
+<h4>'.$row['title'].'</h4>
+<p>'.$row['desc'].'</p>
+</div>
+';
+}}
+//........................................................
+ ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
             </div>
 

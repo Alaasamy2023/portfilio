@@ -5,21 +5,106 @@
 
         <div class="section-title">
           <h2>Skills</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
-        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+          <?php 
+// add skills_info section from DB    
+//........................................................
+    $sql2 = "SELECT * FROM `skills_info` ";
+    $result2 = $conn->query($sql2);
+    
+    if ($result2->num_rows > 0) {
+      // output data of each row
+      while($row = $result2->fetch_assoc()) {
+    
+    
+
+echo'
+<p>'.$row['desc'].'</p>
+
+';
+}}
+//........................................................
+ ?>
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
 
         <div class="row skills-content">
 
-          <div class="col-lg-6">
+          <div class="col-lg-10">
 
-            <div class="progress">
-              <span class="skill">HTML <i class="val">100%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
+          
+          
+          
+          
+          
+          
+          
+          <?php 
+// add skills_info section from DB    
+//........................................................
+    $sql2 = "SELECT * FROM `skills` ";
+    $result2 = $conn->query($sql2);
+    
+    if ($result2->num_rows > 0) {
+      // output data of each row
+      while($row = $result2->fetch_assoc()) {
+    
+    
 
-            <div class="progress">
+echo'
+<div class="progress">
+<span class="skill">'.$row['title'].' <i class="val">'.$row['rate'].'%</i></span>
+<div class="progress-bar-wrap">
+  <div class="progress-bar" role="progressbar" aria-valuenow="'.$row['rate'].'" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+</div>
+';
+}}
+//........................................................
+ ?>
+
+       
+          
+          
+          
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <!-- <div class="progress">
               <span class="skill">CSS <i class="val">90%</i></span>
               <div class="progress-bar-wrap">
                 <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
@@ -56,9 +141,9 @@
               <div class="progress-bar-wrap">
                 <div class="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
-            </div>
+            </div> -->
 
-          </div>
+          <!-- </div> -->
 
         </div>
 

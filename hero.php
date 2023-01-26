@@ -48,7 +48,7 @@ echo'
 
 
       <?php 
-// add hero section fron DB    
+// add social section fron DB    
 //........................................................
     $sql2 = "SELECT * FROM `social` ";
     $result2 = $conn->query($sql2);

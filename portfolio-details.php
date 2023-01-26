@@ -1,3 +1,18 @@
+<?php
+
+
+include("includes/db.php");
+
+
+
+?>
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -49,17 +64,55 @@
             <div class="portfolio-details-slider swiper">
               <div class="swiper-wrapper align-items-center">
 
-                <div class="swiper-slide">
-                  <img src="assets/img/portfolio/portfolio-details-1.jpg" alt="">
-                </div>
 
-                <div class="swiper-slide">
-                  <img src="assets/img/portfolio/portfolio-details-2.jpg" alt="">
-                </div>
 
-                <div class="swiper-slide">
-                  <img src="assets/img/portfolio/portfolio-details-3.jpg" alt="">
-                </div>
+
+
+
+
+
+
+
+
+              <?php 
+// add project_photo section from DB    
+//........................................................
+    $sql2 = "SELECT * FROM `project_photo` WHERE portfolio_id = 1 ";
+    $result2 = $conn->query($sql2);
+    
+    if ($result2->num_rows > 0) {
+      // output data of each row
+      while($row = $result2->fetch_assoc()) {
+    
+    
+
+echo'
+
+<div class="swiper-slide">
+<img src="assets/img/portfolio/'.$row['photo'].'" alt="">
+</div>
+';
+}}
+//........................................................
+ ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
               </div>
               <div class="swiper-pagination"></div>
@@ -67,7 +120,77 @@
           </div>
 
           <div class="col-lg-4">
-            <div class="portfolio-info">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          <?php 
+// add portfolio section from DB    
+//........................................................
+    $sql2 = "SELECT * FROM `portfolio`   WHERE    id = 1 ";
+    $result2 = $conn->query($sql2);
+    
+    if ($result2->num_rows > 0) {
+      // output data of each row
+      while($row = $result2->fetch_assoc()) {
+    
+    
+
+echo'
+
+
+<div class="portfolio-info">
+<h3>'.$row['title'].'</h3>
+<ul>
+  <li><strong>Category</strong>: '.$row['catagory'].'</li>
+  <li><strong>Client</strong>: '.$row['client'].'</li>
+  <li><strong>Project date</strong>: '.$row['date'].'</li>
+  <li><strong>Project URL</strong>: <a href="#">'.$row['url'].'</a></li>
+</ul>
+</div>
+<div class="portfolio-description">
+'.$row['desc'].'
+</div>
+</div>
+';
+}}
+//........................................................
+ ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <!-- <div class="portfolio-info">
               <h3>Project information</h3>
               <ul>
                 <li><strong>Category</strong>: Web design</li>
@@ -82,7 +205,7 @@
                 Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
               </p>
             </div>
-          </div>
+          </div> -->
 
         </div>
 

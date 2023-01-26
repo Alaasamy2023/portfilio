@@ -1,16 +1,59 @@
-  </main><!-- End #main -->
+<?php
+
+
+include("db.php");
+
+
+
+?>
+
+
+
+
+</main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
   <footer id="footer">
     <div class="container">
-      <h3>Brandon Johnson</h3>
-      <p>Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe commodi placeat.</p>
+      <h3>Alaa Samy</h3>
+      <!-- <p>Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe commodi placeat.</p> -->
       <div class="social-links">
-        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-        <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+
+
+
+
+
+
+      <?php 
+// add social section fron DB    
+//........................................................
+    $sql2 = "SELECT * FROM `social` ";
+    $result2 = $conn->query($sql2);
+    
+    if ($result2->num_rows > 0) {
+      // output data of each row
+      while($row = $result2->fetch_assoc()) {
+    
+    
+
+echo'
+<a href="'.$row['link'].'" class="'.$row['class'].'"><i class="'.$row['icon'].'"></i></a>
+';
+
+
+
+ }}
+//........................................................
+ ?>
+
+
+
+
+
+
+
+
+ -->
       </div>
       
      
