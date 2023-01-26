@@ -1,5 +1,9 @@
         <?php include 'includes/header.php';?>	
 
+
+        
+        <?php include 'hero.php';?>	
+
         <?php include 'about.php';?>	
 
         <?php include 'facts.php';?>	

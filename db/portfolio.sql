@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 21, 2023 at 09:57 AM
--- Server version: 10.4.22-MariaDB
--- PHP Version: 7.4.27
+-- Generation Time: Jan 26, 2023 at 06:42 PM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -217,6 +217,13 @@ CREATE TABLE `slider` (
   `desc_html` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `slider`
+--
+
+INSERT INTO `slider` (`id`, `photo`, `name`, `desc_html`) VALUES
+(1, '', 'Alaa samy', 'Designer, Developer, Freelancer, Photographer');
+
 -- --------------------------------------------------------
 
 --
@@ -226,8 +233,20 @@ CREATE TABLE `slider` (
 CREATE TABLE `social` (
   `id` int(11) NOT NULL,
   `icon` varchar(1000) NOT NULL,
-  `link` varchar(1000) NOT NULL
+  `link` varchar(1000) NOT NULL,
+  `class` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `social`
+--
+
+INSERT INTO `social` (`id`, `icon`, `link`, `class`) VALUES
+(1, 'bx bxl-twitter', 'https://twitter.com/', 'twitter'),
+(2, 'bx bxl-facebook', 'https://www.facebook.com/', 'facebook'),
+(3, 'bx bxl-instagram', 'https://www.instagram.com/', 'instagram'),
+(4, 'bx bxl-skype', '#', 'google-plus'),
+(5, 'bx bxl-linkedin', '#', 'linkedin');
 
 --
 -- Indexes for dumped tables
@@ -421,13 +440,13 @@ ALTER TABLE `skills_info`
 -- AUTO_INCREMENT for table `slider`
 --
 ALTER TABLE `slider`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `social`
 --
 ALTER TABLE `social`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
